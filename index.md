@@ -1,8 +1,8 @@
 ---
 layout: base
-title: Student Home 
-description: Home Page
+title: Home 
+description: Nighthawk Home Page
 hide: true
 ---
 
-My journey starts here.
+First line.
