@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-My name is marti
+My name is Marti
