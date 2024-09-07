@@ -5,6 +5,10 @@ permalink: /about/
 description: "12345"
 ---
 
-My name is Marti 
+%%html
 
-This is the about me page 
+<button>Button</button>
+<div>
+    <p>My name is Marti </p>
+    <p>This is the about me page </p>
+</div>
