@@ -21,7 +21,7 @@ description: The Pinnacle of Motorsports
     .car {
       position: fixed;
       top: 50%; /* Center vertically */
-      left: 50%; /* Center horizontally */
+      left: 20%; 
       width: 100px; /* Adjust size as needed */
       transform: translate(-50%, -50%); /* Adjust positioning to center the image */
       transition: transform 0.1s; /* Smooth movement */
@@ -64,7 +64,7 @@ Drivers compete for the esteemed F1 Drivers’ Championship, while the teams fig
 Each race is known as a Grand Prix, and they’re held in incredible locations around the world. 2024 will feature a record-breaking number of Grand Prix events, with 24 races set to take place this season.
 
 <head>
-    <title> My favourite drivers of all time </title>
+  <h2> My favourite drivers of all time </h2>
 </head>
 (I haven't been able so watch them all live since I wasn't born yet but I've watched video recordings of their past races and achievements)
 <head>
@@ -83,12 +83,12 @@ Each race is known as a Grand Prix, and they’re held in incredible locations a
     .image-box img {
       width: 150px; 
       height: auto; 
-      margin-bottom: 5px; /* Space between image and text */
+      margin-bottom: 5px; 
     }
 
     .image-box p {
-      font-size: 14px; /* Small text for caption */
-      color: #333; /* Text color */
+      font-size: 18px; 
+      color: #333; 
     }
   </style>
 </head>
@@ -111,5 +111,5 @@ Each race is known as a Grand Prix, and they’re held in incredible locations a
 
 </body>
 
-Source
-<a>href="https://www.formula1.com/en/latest/article/drivers-teams-cars-circuits-and-more-everything-you-need-to-know-about.7iQfL3Rivf1comzdqV5jwc">What You Need to Know About F1</a>
+Source:
+<a href="https://www.formula1.com/en/latest/article/drivers-teams-cars-circuits-and-more-everything-you-need-to-know-about.7iQfL3Rivf1comzdqV5jwc">What You Need to Know About F1</a>

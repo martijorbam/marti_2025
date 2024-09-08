@@ -6,6 +6,9 @@ image: /images/mario.png
 hide: true
 ---
 
+Welcome to my page.
+My name is Marti.
+
 <!-- Liquid:  statements -->
 <!--- Concatenation of site URL to frontmatter image  --->
 {% assign sprite_file = site.baseurl | append: page.image %}
