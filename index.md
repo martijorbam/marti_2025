@@ -6,9 +6,6 @@ image: /images/mario.png
 hide: true
 ---
 
-Welcome to my page.
-My name is Marti.
-
 <!-- Liquid:  statements -->
 <!--- Concatenation of site URL to frontmatter image  --->
 {% assign sprite_file = site.baseurl | append: page.image %}
@@ -189,5 +186,33 @@ My name is Marti.
 
 </script>
 
-First line.
+Hello! I'm Marti, welcome to my page.
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Big GIF Example</title>
+  <style>
+    .b-gif {
+      width: 100%; /* Full width */
+      max-width: 800px; /* Restricts the maximum width */
+      height: auto; /* Maintains aspect ratio */
+      display: block;
+      margin: 20px auto; /* Centers the GIF */
+    }
+  </style>
+</head>
+<body>
+
+  <img src="../marti_2025/images/messi.gif" alt="Gif GIF" class="b-gif">
+
+</body>
+
+# Welcome to My Blog
+Here are some important Notebooks:
+
+<a href="http://127.0.0.1:4100/marti_2025/2024/09/09/planning-notebook_IPYNB_2_.html">Planning Notebook</a>
+
+
+
+<a href="http://127.0.0.1:4100/marti_2025/2024/09/09/javascript_IPYNB_2_.html">JS Notebook</a>
