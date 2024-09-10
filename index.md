@@ -6,6 +6,82 @@ image: /images/mario.png
 hide: true
 ---
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marti's Blog</title>
+    <style>
+        .typewriter-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 20vh;
+            background-color: #FFFFFF;
+            margin: 0;
+        }
+
+        .typewriter h1 {
+            overflow: hidden; 
+            font-family: Monospace;
+            border-right: .015em solid orange; 
+            white-space: nowrap; 
+            margin: 0 auto; 
+            letter-spacing: 0.015em; 
+            animation: 
+                typing 15.0s steps(30, end) forwards,
+                blink-caret 1s step-end infinite;
+            animation-delay: 0.5s;
+            animation-fill-mode: both;
+            color: #000000;
+            text-align: center;
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+            25%, 50%, 75% {
+                width: 100%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        h2 {
+            color: #FFFFEE;
+        }
+
+        h1 {
+            color: #FFFFFF;
+        }
+
+        h1:hover {
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="typewriter-container">
+        <div class="typewriter">
+            <h1>.....Welcome to Marti's Blog.....</h1>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.querySelector("body").classList.add("loaded");
+            }, 2000);
+        });
+    </script>
+</body>
+
 <!-- Liquid:  statements -->
 <!--- Concatenation of site URL to frontmatter image  --->
 {% assign sprite_file = site.baseurl | append: page.image %}
@@ -185,8 +261,6 @@ hide: true
   });
 
 </script>
-
-Hello! I'm Marti, welcome to my page.
 
 <head>
   <meta charset="UTF-8">
