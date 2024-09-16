@@ -191,9 +191,20 @@ description: The Pinnacle of Motorsports
             margin: 0 auto;
             border: 1px solid #000;
         }
+        #controls {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        button {
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
+    <div id="controls">
+        <button id="humanButton">Opponent: Human</button>
+        <button id="aiButton">Opponent: AI</button>
+    </div>
     <canvas id="gameCanvas" width="600" height="400"></canvas>
     <script>
         const canvas = document.getElementById('gameCanvas');
@@ -201,6 +212,8 @@ description: The Pinnacle of Motorsports
         const scale = 20;
         const rows = canvas.height / scale;
         const cols = canvas.width / scale;
+
+        let isAI = false; // Default opponent type is human
 
         let snake1 = { x: 2 * scale, y: 2 * scale, dx: scale, dy: 0, body: [], started: false, alive: true };
         let snake2 = { x: 10 * scale, y: 10 * scale, dx: 0, dy: -scale, body: [], started: false, alive: true };
@@ -241,7 +254,10 @@ description: The Pinnacle of Motorsports
 
         function update() {
             if (snake1.alive && snake1.started) moveSnake(snake1);
-            if (snake2.alive && snake2.started) moveSnake(snake2);
+            if (snake2.alive && snake2.started) {
+                if (isAI) aiMove(snake2);
+                else moveSnake(snake2);
+            }
             
             // Check for apple collision
             if (snake1.x === apple.x && snake1.y === apple.y) {
@@ -254,39 +270,26 @@ description: The Pinnacle of Motorsports
                 apple = { x: Math.floor(Math.random() * cols) * scale, y: Math.floor(Math.random() * rows) * scale };
             }
             
-            // Check for wall collision
-            if (snake1.x < 0 || snake1.x >= canvas.width || snake1.y < 0 || snake1.y >= canvas.height) {
-                snake1.alive = false;
-                respawn(snake1);
-            }
-            
-            if (snake2.x < 0 || snake2.x >= canvas.width || snake2.y < 0 || snake2.y >= canvas.height) {
-                snake2.alive = false;
-                respawn(snake2);
-            }
-            
-            // Check for snake collision
+            // Check for wall collision and collisions with the other snake
+            if (!snake1.alive) respawn(snake1);
+            if (!snake2.alive) respawn(snake2);
+
             if (collision(snake1, snake2) || collision(snake2, snake1)) {
                 if (snake1.alive && snake2.alive) resetGame();
                 else if (snake1.alive) respawn(snake1);
                 else if (snake2.alive) respawn(snake2);
-            }
-
-            // Check for self-collision
-            if (selfCollision(snake1)) {
-                snake1.alive = false;
-                respawn(snake1);
-            }
-
-            if (selfCollision(snake2)) {
-                snake2.alive = false;
-                respawn(snake2);
             }
         }
 
         function moveSnake(snake) {
             snake.x += snake.dx;
             snake.y += snake.dy;
+            
+            // Check for wall collision
+            if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
+                snake.alive = false;
+                return;
+            }
             
             // Add new head
             snake.body.unshift({ x: snake.x, y: snake.y });
@@ -295,12 +298,33 @@ description: The Pinnacle of Motorsports
             snake.body.pop();
         }
 
-        function collision(snake1, snake2) {
-            return snake2.body.some(segment => segment.x === snake1.x && segment.y === snake1.y);
+        function aiMove(snake) {
+            // AI that tries to move towards the apple
+            const directions = [{dx: scale, dy: 0}, {dx: -scale, dy: 0}, {dx: 0, dy: scale}, {dx: 0, dy: -scale}];
+            let bestMove = null;
+            let minDistance = Infinity;
+
+            for (const move of directions) {
+                if (move.dx === -snake.dx && move.dy === -snake.dy) continue; // Avoid reverse direction
+                const newX = snake.x + move.dx;
+                const newY = snake.y + move.dy;
+                const distance = Math.hypot(apple.x - newX, apple.y - newY);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    bestMove = move;
+                }
+            }
+
+            if (bestMove) {
+                snake.dx = bestMove.dx;
+                snake.dy = bestMove.dy;
+                moveSnake(snake);
+            }
         }
 
-        function selfCollision(snake) {
-            return snake.body.some(segment => segment.x === snake.x && segment.y === snake.y);
+        function collision(snake1, snake2) {
+            return snake2.body.some(segment => segment.x === snake1.x && segment.y === snake1.y);
         }
 
         function respawn(snake) {
@@ -361,6 +385,22 @@ description: The Pinnacle of Motorsports
                     break;
             }
         }
+
+        function selectOpponent(opponent) {
+            if (opponent === 'human') {
+                isAI = false;
+                document.getElementById('humanButton').disabled = true;
+                document.getElementById('aiButton').disabled = false;
+            } else if (opponent === 'ai') {
+                isAI = true;
+                document.getElementById('humanButton').disabled = false;
+                document.getElementById('aiButton').disabled = true;
+            }
+            resetGame(); // Reset the game when opponent type is changed
+        }
+
+        document.getElementById('humanButton').addEventListener('click', () => selectOpponent('human'));
+        document.getElementById('aiButton').addEventListener('click', () => selectOpponent('ai'));
 
         document.addEventListener('keydown', control);
 
