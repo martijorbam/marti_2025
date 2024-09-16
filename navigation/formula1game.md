@@ -1,0 +1,375 @@
+---
+layout: page 
+title: Formula 1
+search_exclude: true
+permalink: /formulagame/
+description: The Pinnacle of Motorsports
+---
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Quiz Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+
+    .question-container {
+      margin: 20px auto;
+      width: 80%;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+
+    .options li {
+      margin: 10px 0;
+      background-color: #e1e1e1;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .options li:hover {
+      background-color: #d1d1d1;
+    }
+
+    #timer, #score {
+      margin: 20px 0;
+      font-size: 18px;
+    }
+
+    #result {
+      font-size: 24px;
+      color: green;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>F1 Quiz Game</h1>
+
+<div id="game-container">
+  <div id="timer">Time: 0s</div>
+  <div id="score">Score: 0</div>
+
+  <div class="question-container" id="question-container">
+    <div class="question" id="question"></div>
+    <img id="question-image" style="max-width: 100%; display: none;" alt="F1 Question Image">
+    <ul class="options" id="options"></ul>
+  </div>
+</div>
+
+<div id="result" style="display: none;"></div>
+
+<script>
+  const questions = [
+    {
+      text: "Who won the 2022 F1 World Championship?",
+      options: ["Max Verstappen", "Lewis Hamilton", "Sebastian Vettel"],
+      correct: 0
+    },
+    {
+      text: "What team does this logo belong to?",
+      image: "../images/Ferrari-Scuderia-Logo.png", 
+      options: ["Ferrari", "Mercedes", "Red Bull"],
+      correct: 0
+    },
+    {
+      text: "In what year did Ayrton Senna win his first world title?",
+      options: ["1988", "1990", "1994"],
+      correct: 0
+    },
+    {
+      text: "Identify this F1 car.",
+      image: "../images/mcl36.jpg", 
+      options: ["McLaren MCL36", "Ferrari F2004", "Red Bull RB16"],
+      correct: 0
+    },
+    // Add more questions as needed
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+  let timer = 0;
+  let interval;
+  let timerStarted = false;
+
+  const questionContainer = document.getElementById('question-container');
+  const questionText = document.getElementById('question');
+  const questionImage = document.getElementById('question-image');
+  const optionsList = document.getElementById('options');
+  const result = document.getElementById('result');
+  const scoreDisplay = document.getElementById('score');
+  const timerDisplay = document.getElementById('timer');
+
+  function loadQuestion() {
+    const question = questions[currentQuestion];
+
+    questionText.textContent = question.text || '';
+    if (question.image) {
+      questionImage.src = question.image;
+      questionImage.style.display = 'block';
+    } else {
+      questionImage.style.display = 'none';
+    }
+
+    optionsList.innerHTML = '';
+    question.options.forEach((option, index) => {
+      const li = document.createElement('li');
+      li.textContent = option;
+      li.addEventListener('click', () => selectAnswer(index));
+      optionsList.appendChild(li);
+    });
+  }
+
+  function selectAnswer(selectedIndex) {
+    const question = questions[currentQuestion];
+
+    // Start the timer when the first question is answered
+    if (!timerStarted) {
+      startTimer();
+      timerStarted = true;
+    }
+
+    if (selectedIndex === question.correct) {
+      score++;
+      scoreDisplay.textContent = `Score: ${score}`;
+    }
+
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+      loadQuestion();
+    } else {
+      endGame();
+    }
+  }
+
+  function startTimer() {
+    interval = setInterval(() => {
+      timer++;
+      timerDisplay.textContent = `Time: ${timer}s`;
+    }, 1000);
+  }
+
+  function endGame() {
+    clearInterval(interval);
+    questionContainer.style.display = 'none';
+    result.style.display = 'block';
+    result.textContent = `Quiz Over! Final Score: ${score}, Time: ${timer}s`;
+  }
+
+  loadQuestion(); // Load the first question as soon as the page loads
+</script>
+
+</body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Player Snake Game</title>
+    <style>
+        canvas {
+            background: #f0f0f0;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scale = 20;
+        const rows = canvas.height / scale;
+        const cols = canvas.width / scale;
+
+        let snake1 = { x: 2 * scale, y: 2 * scale, dx: scale, dy: 0, body: [], started: false, alive: true };
+        let snake2 = { x: 10 * scale, y: 10 * scale, dx: 0, dy: -scale, body: [], started: false, alive: true };
+        let apple = { x: Math.floor(Math.random() * cols) * scale, y: Math.floor(Math.random() * rows) * scale };
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw grid
+            ctx.strokeStyle = '#ddd';
+            for (let i = 0; i <= canvas.width; i += scale) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, canvas.height);
+                ctx.stroke();
+            }
+            for (let i = 0; i <= canvas.height; i += scale) {
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(canvas.width, i);
+                ctx.stroke();
+            }
+            
+            // Draw apple
+            ctx.fillStyle = 'red';
+            ctx.fillRect(apple.x, apple.y, scale, scale);
+            
+            // Draw snakes
+            if (snake1.alive) drawSnake(snake1, 'green');
+            if (snake2.alive) drawSnake(snake2, 'blue');
+        }
+
+        function drawSnake(snake, color) {
+            ctx.fillStyle = color;
+            snake.body.forEach(segment => ctx.fillRect(segment.x, segment.y, scale, scale));
+            ctx.fillRect(snake.x, snake.y, scale, scale);
+        }
+
+        function update() {
+            if (snake1.alive && snake1.started) moveSnake(snake1);
+            if (snake2.alive && snake2.started) moveSnake(snake2);
+            
+            // Check for apple collision
+            if (snake1.x === apple.x && snake1.y === apple.y) {
+                snake1.body.push({ x: apple.x, y: apple.y });
+                apple = { x: Math.floor(Math.random() * cols) * scale, y: Math.floor(Math.random() * rows) * scale };
+            }
+            
+            if (snake2.x === apple.x && snake2.y === apple.y) {
+                snake2.body.push({ x: apple.x, y: apple.y });
+                apple = { x: Math.floor(Math.random() * cols) * scale, y: Math.floor(Math.random() * rows) * scale };
+            }
+            
+            // Check for wall collision
+            if (snake1.x < 0 || snake1.x >= canvas.width || snake1.y < 0 || snake1.y >= canvas.height) {
+                snake1.alive = false;
+                respawn(snake1);
+            }
+            
+            if (snake2.x < 0 || snake2.x >= canvas.width || snake2.y < 0 || snake2.y >= canvas.height) {
+                snake2.alive = false;
+                respawn(snake2);
+            }
+            
+            // Check for snake collision
+            if (collision(snake1, snake2) || collision(snake2, snake1)) {
+                if (snake1.alive && snake2.alive) resetGame();
+                else if (snake1.alive) respawn(snake1);
+                else if (snake2.alive) respawn(snake2);
+            }
+
+            // Check for self-collision
+            if (selfCollision(snake1)) {
+                snake1.alive = false;
+                respawn(snake1);
+            }
+
+            if (selfCollision(snake2)) {
+                snake2.alive = false;
+                respawn(snake2);
+            }
+        }
+
+        function moveSnake(snake) {
+            snake.x += snake.dx;
+            snake.y += snake.dy;
+            
+            // Add new head
+            snake.body.unshift({ x: snake.x, y: snake.y });
+            
+            // Remove tail
+            snake.body.pop();
+        }
+
+        function collision(snake1, snake2) {
+            return snake2.body.some(segment => segment.x === snake1.x && segment.y === snake1.y);
+        }
+
+        function selfCollision(snake) {
+            return snake.body.some(segment => segment.x === snake.x && segment.y === snake.y);
+        }
+
+        function respawn(snake) {
+            if (!snake.alive) {
+                snake.x = Math.floor(Math.random() * cols) * scale;
+                snake.y = Math.floor(Math.random() * rows) * scale;
+                snake.body = [];
+                snake.dx = scale;
+                snake.dy = 0;
+                snake.started = false;
+                snake.alive = true;
+            }
+        }
+
+        function resetGame() {
+            snake1 = { x: 2 * scale, y: 2 * scale, dx: scale, dy: 0, body: [], started: false, alive: true };
+            snake2 = { x: 10 * scale, y: 10 * scale, dx: 0, dy: -scale, body: [], started: false, alive: true };
+            apple = { x: Math.floor(Math.random() * cols) * scale, y: Math.floor(Math.random() * rows) * scale };
+        }
+
+        function control(e) {
+            switch(e.keyCode) {
+                case 37: // Left arrow
+                    if (snake1.dx === 0) { snake1.dx = -scale; snake1.dy = 0; }
+                    snake1.started = true;
+                    e.preventDefault(); // Prevent default arrow key action
+                    break;
+                case 38: // Up arrow
+                    if (snake1.dy === 0) { snake1.dy = -scale; snake1.dx = 0; }
+                    snake1.started = true;
+                    e.preventDefault(); // Prevent default arrow key action
+                    break;
+                case 39: // Right arrow
+                    if (snake1.dx === 0) { snake1.dx = scale; snake1.dy = 0; }
+                    snake1.started = true;
+                    e.preventDefault(); // Prevent default arrow key action
+                    break;
+                case 40: // Down arrow
+                    if (snake1.dy === 0) { snake1.dy = scale; snake1.dx = 0; }
+                    snake1.started = true;
+                    e.preventDefault(); // Prevent default arrow key action
+                    break;
+                case 65: // A key (left for player 2)
+                    if (snake2.dx === 0) { snake2.dx = -scale; snake2.dy = 0; }
+                    snake2.started = true;
+                    break;
+                case 87: // W key (up for player 2)
+                    if (snake2.dy === 0) { snake2.dy = -scale; snake2.dx = 0; }
+                    snake2.started = true;
+                    break;
+                case 68: // D key (right for player 2)
+                    if (snake2.dx === 0) { snake2.dx = scale; snake2.dy = 0; }
+                    snake2.started = true;
+                    break;
+                case 83: // S key (down for player 2)
+                    if (snake2.dy === 0) { snake2.dy = scale; snake2.dx = 0; }
+                    snake2.started = true;
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', control);
+
+        function gameLoop() {
+            update();
+            draw();
+            setTimeout(gameLoop, 100);
+        }
+
+        gameLoop();
+    </script>
+</body>
