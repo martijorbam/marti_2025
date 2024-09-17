@@ -54,8 +54,8 @@ description: The Pinnacle of Motorsports
     }
 
     #result {
-      font-size: 24px;
-      color: green;
+      font-size: 36px; /* Increased font size */
+      color: rgb(184, 45, 17); /* Changed color */
       margin-top: 20px;
     }
 
@@ -102,7 +102,62 @@ description: The Pinnacle of Motorsports
       options: ["McLaren MCL36", "Ferrari F2004", "Red Bull RB16"],
       correct: 0
     },
-    // Add more questions as needed
+    // New questions
+    {
+      text: "Which driver won the most races in the 2021 F1 season?",
+      options: ["Max Verstappen", "Lewis Hamilton", "Valtteri Bottas"],
+      correct: 0
+    },
+    {
+      text: "What is the name of the F1 circuit located in Monaco?",
+      options: ["Circuit de Monaco", "Circuit Gilles Villeneuve", "Silverstone Circuit"],
+      correct: 0
+    },
+    {
+      text: "Which team did Michael Schumacher drive for during his first World Championship win?",
+      options: ["Benetton", "Ferrari", "Williams"],
+      correct: 0
+    },
+    {
+      text: "Which country hosts the Australian Grand Prix?",
+      options: ["Australia", "New Zealand", "South Africa"],
+      correct: 0
+    },
+    {
+      text: "Who is known as 'The Professor' in F1?",
+      options: ["Ayrton Senna", "Alain Prost", "Niki Lauda"],
+      correct: 1
+    },
+    {
+      text: "What is the maximum number of points a driver can earn in a single race as of 2024?",
+      options: ["25", "30", "35"],
+      correct: 0
+    },
+    {
+      text: "Which F1 team has won the most Constructors' Championships?",
+      options: ["Ferrari", "Mercedes", "Red Bull"],
+      correct: 0
+    },
+    {
+      text: "Who holds the record for the most consecutive wins in F1?",
+      options: ["Sebastian Vettel", "Michael Schumacher", "Max Verstappen"],
+      correct: 2
+    },
+    {
+      text: "Which driver is known for his famous rivalry with Ayrton Senna?",
+      options: ["Nelson Piquet", "Nigel Mansell", "Alain Prost"],
+      correct: 2
+    },
+    {
+      text: "Which drivers is known as 'The Rookie' of F1?",
+      options: ["George Russel", "Fernando Alonso", "Kimi Antonelli"],
+      correct: 1
+    },
+    {
+      text: "Which race, along with the 24h Hours of Lemans and the Monaco GP, forms the Triple Crown of Motorsport?",
+      options: ["Belgian GP", "Indianapolis 500", "Nürburgring 24 Hours"],
+      correct: 1
+    }
   ];
 
   let currentQuestion = 0;

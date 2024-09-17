@@ -290,3 +290,6 @@ Here are some important Notebooks:
 
 
 <a href="http://127.0.0.1:4100/marti_2025/2024/09/09/javascript_IPYNB_2_.html">JS Notebook</a>
+
+# Here are some games you can play:
+<a href="http://127.0.0.1:4100/marti_2025/formulagame/">Check it out!</a>
