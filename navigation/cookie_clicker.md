@@ -1,6 +1,6 @@
 ---
 layout: page 
-title: Cookie
+title: Cookie Clicker
 search_exclude: true
 permalink: /cookie/
 ---
@@ -9,7 +9,6 @@ permalink: /cookie/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Clicker</title>
     <style>
         body {
             text-align: center;
@@ -56,7 +55,6 @@ permalink: /cookie/
 </head>
 <body>
     <div id="game">
-        <h1>Cookie Clicker</h1>
         <div id="cookie-section">
             <img id="cookie" src="../images/cookie_icon.png" alt="Cookie">
             <audio id="click-sound" src="../sounds/sound1.mp3"></audio>
