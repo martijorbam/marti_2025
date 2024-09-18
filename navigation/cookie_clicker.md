@@ -2,7 +2,8 @@
 layout: page 
 title: Cookie Clicker
 search_exclude: true
-permalink: /cookie/
+permalink: /games/cookie/
+description: Fun Cookie Game
 ---
 
 

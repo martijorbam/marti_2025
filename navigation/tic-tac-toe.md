@@ -2,7 +2,7 @@
 layout: page 
 title: Tic Tac Toe
 search_exclude: true
-permalink: /tictactoe/
+permalink: /games/tictactoe/
 ---
 
 Choose your game mode, then click the squares to play!

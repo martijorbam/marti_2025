@@ -2,7 +2,7 @@
 layout: page 
 title: Snake Game
 search_exclude: true
-permalink: /snakegame/
+permalink: /games/snakegameplus/
 description: Play the Snake Game with a friend or by yourself
 ---
 

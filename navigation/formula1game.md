@@ -2,7 +2,7 @@
 layout: page 
 title: Formula1 Quiz
 search_exclude: true
-permalink: /formulagame/
+permalink: /games/formulagame/
 description: How much do you know about F1?
 ---
 
