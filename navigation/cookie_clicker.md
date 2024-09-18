@@ -159,6 +159,57 @@ permalink: /cookie/
             }
         }
 
+        // Save game progress
+        function saveGame() {
+            const gameState = {
+                cookies,
+                totalCookies,
+                cookiesPerSecond,
+                grannyCost,
+                factoryCost,
+                planeCost,
+                worldwideFactoryCost,
+                grannyCount,
+                factoryCount,
+                planeCount,
+                worldwideFactoryCount,
+                milestoneIndex
+            };
+            const saveCode = btoa(JSON.stringify(gameState)); // Convert object to a base64 string
+            document.getElementById("save-code").value = saveCode; // Display save code in the input field
+        }
+
+        // Load game progress
+        function loadGame() {
+            const saveCode = document.getElementById("save-code").value;
+            if (saveCode) {
+                try {
+                    const gameState = JSON.parse(atob(saveCode)); // Decode the base64 string and parse JSON
+                    cookies = gameState.cookies;
+                    totalCookies = gameState.totalCookies;
+                    cookiesPerSecond = gameState.cookiesPerSecond;
+                    grannyCost = gameState.grannyCost;
+                    factoryCost = gameState.factoryCost;
+                    planeCost = gameState.planeCost;
+                    worldwideFactoryCost = gameState.worldwideFactoryCost;
+                    grannyCount = gameState.grannyCount;
+                    factoryCount = gameState.factoryCount;
+                    planeCount = gameState.planeCount;
+                    worldwideFactoryCount = gameState.worldwideFactoryCount;
+                    milestoneIndex = gameState.milestoneIndex;
+
+                    updateDisplay(); // Update UI with loaded data
+                } catch (error) {
+                    console.error("Invalid save code", error);
+                    alert("Invalid save code. Please try again.");
+                }
+            }
+        }
+
+        // Event listeners for save/load buttons
+        document.getElementById("save-game").addEventListener("click", saveGame);
+        document.getElementById("load-game").addEventListener("click", loadGame);
+
         // Click event to add 1 cookie on each click
         cookie.addEventListener("click", () => {
             cookies += 1;
