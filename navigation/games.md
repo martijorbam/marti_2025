@@ -65,5 +65,8 @@ permalink: /games
         <a href="http://127.0.0.1:4100/marti_2025/games/cookie">Cookie Clicker</a>
         <img src="images/image5.png" alt="Image for Page 5">
     </div>
-
+    <div class="link-container">
+        <a href="http://127.0.0.1:4100/marti_2025/games/itunes">Search Music</a>
+        <img src="images/image5.png" alt="Image for Page 5">
+    </div>
 </body>
