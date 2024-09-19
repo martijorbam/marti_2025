@@ -6,10 +6,24 @@ permalink: /games/snakegame/
 description: Play the Snake Game with power-ups
 ---
 
+Controls: Arrow Keys
+
+
+Apples: Red Square
+
+
+PowerUp: Yellow
+
+
 <canvas id="snakeGame" width="400" height="400" style="border:1px solid black;"></canvas>
 <button id="startButton" style="display:none;">Start Game</button>
 
 <script>
+      window.addEventListener("keydown", function(event) {
+      if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+        event.preventDefault(); // Prevents default scrolling behavior
+      }
+    });
   const canvas = document.getElementById("snakeGame");
   const ctx = canvas.getContext("2d");
   const box = 20;
@@ -38,10 +52,10 @@ description: Play the Snake Game with power-ups
   }
 
   function setDirection(event) {
-    if (event.key === 'w' && direction !== "DOWN") direction = "UP";
-    else if (event.key === 's' && direction !== "UP") direction = "DOWN";
-    else if (event.key === 'a' && direction !== "RIGHT") direction = "LEFT";
-    else if (event.key === 'd' && direction !== "LEFT") direction = "RIGHT";
+    if (event.key === 'ArrowUp' && direction !== "DOWN") direction = "UP";
+    else if (event.key === 'ArrowDown' && direction !== "UP") direction = "DOWN";
+    else if (event.key === 'ArrowLeft' && direction !== "RIGHT") direction = "LEFT";
+    else if (event.key === 'ArrowRight' && direction !== "LEFT") direction = "RIGHT";
   }
 
   function drawGame() {
