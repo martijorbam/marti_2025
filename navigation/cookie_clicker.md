@@ -57,32 +57,32 @@ description: Fun Cookie Game
 <body>
     <div id="game">
         <div id="cookie-section">
-            <img id="cookie" src="../images/cookie_icon.png" alt="Cookie">
+            <img id="cookie" src="{{site.baseurl}}/images/cookie_icon.png" alt="Cookie">
             <audio id="click-sound" src="../sounds/sound1.mp3"></audio>
         </div>
         <p id="cookie-count">Cookies: 0</p>
         <p id="cookies-per-second">Cookies per second: 0</p>
         <div id="shop">
             <button id="buy-granny">
-                <img src="../images/grandma-cookie-removebg-preview.png" class="icon" alt="Granny Icon">
+                <img src="{{site.baseurl}}/images/grandma-cookie-removebg-preview.png" class="icon" alt="Granny Icon">
                 Buy Granny (Cost: <span id="granny-cost">100</span> cookies)
             </button>
             <p id="granny-count">Grannies: 0 (each makes 1 cookie per second)</p>
             
             <button id="buy-factory">
-                <img src="../images/factory-cookie-removebg-preview.png" class="icon" alt="Factory Icon">
+                <img src="{{site.baseurl}}/images/factory-cookie-removebg-preview.png" class="icon" alt="Factory Icon">
                 Buy Factory (Cost: <span id="factory-cost">500</span> cookies)
             </button>
             <p id="factory-count">Factories: 0 (each makes 5 cookies per second)</p>
 
             <button id="buy-plane">
-                <img src="../images/plane-icon-f.png" class="icon" alt="Plane Icon">
+                <img src="{{site.baseurl}}/images/plane-icon-f.png" class="icon" alt="Plane Icon">
                 Buy Plane (Cost: <span id="plane-cost">2000</span> cookies)
             </button>
             <p id="plane-count">Planes: 0 (each makes 10 cookies per second)</p>
 
             <button id="buy-worldwide-factory">
-                <img src="../images/factories-cookie-removebg-preview.png" class="icon" alt="Worldwide Factory Icon">
+                <img src="{{site.baseurl}}/images/factories-cookie-removebg-preview.png" class="icon" alt="Worldwide Factory Icon">
                 Buy Worldwide Factory Network (Cost: <span id="worldwide-factory-cost">100,000</span> cookies)
             </button>
             <p id="worldwide-factory-count">Worldwide Factories: 0 (each makes 300 cookies per second)</p>

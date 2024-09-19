@@ -1,6 +1,7 @@
 ---
-layout: page
+layout: post
 title: About
+comments: true
 permalink: /about/
 description: "About Me Page"
 ---

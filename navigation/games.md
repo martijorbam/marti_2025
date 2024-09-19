@@ -43,30 +43,30 @@ permalink: /games
 
     <div class="link-container">
         <a href="http://127.0.0.1:4100/marti_2025/games/calculator">Binary Calculator</a>
-        <img src="images/image1.png" alt="Image for Page 1">
+        <img src="{{site.baseurl}}/images/binary-calculator.png" alt="Image for Page 1">
     </div>
 
     <div class="link-container">
         <a href="http://127.0.0.1:4100/marti_2025/games/formulagame">Formula1 Quiz</a>
-        <img src="images/image2.png" alt="Image for Page 2">
+        <img src="{{site.baseurl}}/images/f1-quiz.png" alt="Image for Page 2">
     </div>
 
     <div class="link-container">
         <a href="http://127.0.0.1:4100/marti_2025/games/snakegame">Snake Game</a>
-        <img src="images/image3.png" alt="Image for Page 3">
+        <img src="{{site.baseurl}}/images/snake-game.png" alt="Image for Page 3">
     </div>
 
     <div class="link-container">
         <a href="http://127.0.0.1:4100/marti_2025/games/tictactoe">Tic Tac Toe</a>
-        <img src="images/image4.png" alt="Image for Page 4">
+        <img src="{{site.baseurl}}/images/tictactoe.png" alt="Image for Page 4">
     </div>
 
     <div class="link-container">
         <a href="http://127.0.0.1:4100/marti_2025/games/cookie">Cookie Clicker</a>
-        <img src="images/image5.png" alt="Image for Page 5">
+        <img src="{{site.baseurl}}/images/cookie-clicker.png" alt="Image for Page 5">
     </div>
     <div class="link-container">
         <a href="http://127.0.0.1:4100/marti_2025/games/itunes">Search Music</a>
-        <img src="images/image5.png" alt="Image for Page 5">
+        <img src="{{site.baseurl}}/images/itunes.png" alt="Image for Page 5">
     </div>
 </body>
