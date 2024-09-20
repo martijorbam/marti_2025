@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: About
 permalink: /about/
-description: "About Me Page"
+description: "About Me + Readme"
 ---
 
 I'm Marti Jorba, I am a junior in DNHS. 🎓  
@@ -38,3 +38,6 @@ I like playing music 🎶, I play the guitar 🎸 and the bass 🎸, and I enjoy
     <img src="{{site.baseurl}}/images/neymarcsp.webp" alt="Image 4">
   </div>
 </body>
+
+# Readme
+<a href="{{site.baseurl}}/README4YML.html">Access Readme</a>
