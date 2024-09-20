@@ -32,16 +32,9 @@ I like playing music 🎶, I play the guitar 🎸 and the bass 🎸, and I enjoy
 <body>
 
   <div class="image-container">
-    <img src="../images/dnhscsp.webp" alt="Image 1">
-    <img src="../images/f1csp.jpg" alt="Image 2">
-    <img src="../images/musiccps.webp" alt="Image 3">
-    <img src="../images/neymarcsp.webp" alt="Image 4">
+    <img src="{{site.baseurl}}/images/dnhscsp.webp" alt="Image 1">
+    <img src="{{site.baseurl}}/images/f1csp.jpg" alt="Image 2">
+    <img src="{{site.baseurl}}/images/musiccps.webp" alt="Image 3">
+    <img src="{{site.baseurl}}/images/neymarcsp.webp" alt="Image 4">
   </div>
-  <script src="https://utteranc.es/client.js"
-        repo="martijorbam/marti_2025"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-  </script>
 </body>

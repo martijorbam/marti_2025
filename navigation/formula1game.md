@@ -87,7 +87,7 @@ description: How much do you know about F1?
     },
     {
       text: "What team does this logo belong to?",
-      image: "../images/Ferrari-Scuderia-Logo.png", 
+      image: "{{site.baseurl}}/images/Ferrari-Scuderia-Logo.png", 
       options: ["Ferrari", "Mercedes", "Red Bull"],
       correct: 0
     },
@@ -98,7 +98,7 @@ description: How much do you know about F1?
     },
     {
       text: "Identify this F1 car.",
-      image: "../images/mcl36.jpg", 
+      image: "{{site.baseurl}}/images/mcl36.jpg", 
       options: ["McLaren MCL36", "Ferrari F2004", "Red Bull RB16"],
       correct: 0
     },

@@ -31,7 +31,7 @@ description: The Pinnacle of Motorsports
 <body>
 
   <!-- F1 Car Image -->
-  <img src="../images/test_f1-removebg-preview.png" alt="F1 Car" class="car" id="car">
+  <img src="{{site.baseurl}}/images/test_f1-removebg-preview.png" alt="F1 Car" class="car" id="car">
 
   <script>
     const car = document.getElementById('car');
@@ -96,15 +96,15 @@ Each race is known as a Grand Prix, and they’re held in incredible locations a
 
   <div class="image-container">
     <div class="image-box">
-      <img src="../images/michael_schumacher.webp" alt="Image 1">
+      <img src="{{site.baseurl}}/images/michael_schumacher.webp" alt="Image 1">
       <p>Michael Schumacher</p>
     </div>
     <div class="image-box">
-      <img src="../images/ayrton-senna-1.jpg" alt="Image 2">
+      <img src="{{site.baseurl}}/images/ayrton-senna-1.jpg" alt="Image 2">
       <p>Ayrton Senna</p>
     </div>
     <div class="image-box">
-      <img src="../images/f1_1.jpg" alt="Image 3">
+      <img src="{{site.baseurl}}/images/f1_1.jpg" alt="Image 3">
       <p>Fernando Alonso</p>
     </div>
   </div>

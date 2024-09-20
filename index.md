@@ -278,16 +278,16 @@ hide: true
 </head>
 <body>
 
-  <img src="../marti_2025/images/messi.gif" alt="Gif GIF" class="b-gif">
+  <img src="{{site.baseurl}}/images/messi.gif" alt="Gif GIF" class="b-gif">
 
 </body>
 
 # Welcome to My Blog
 Here are some important Notebooks:
 
-<a href="http://127.0.0.1:4100/marti_2025/2024/09/09/planning-notebook_IPYNB_2_.html">Planning Notebook</a>
+<a href="{{site.baseurl}}/2024/09/09/planning-notebook_IPYNB_2_.html">Planning Notebook</a>
 
 
 
-<a href="http://127.0.0.1:4100/marti_2025/2024/09/09/javascript_IPYNB_2_.html">JS Notebook</a>
+<a href="{{site.baseurl}}/2024/09/09/javascript_IPYNB_2_.html">JS Notebook</a>
 
