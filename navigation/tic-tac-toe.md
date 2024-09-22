@@ -3,6 +3,7 @@ layout: page
 title: Tic Tac Toe
 search_exclude: true
 permalink: /games/tictactoe/
+description: Play against a friend or AI
 ---
 
 Choose your game mode, then click the squares to play!
