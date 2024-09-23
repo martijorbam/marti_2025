@@ -40,30 +40,30 @@ permalink: /games
 
     <div class="link-container">
       <a href="{{site.baseurl}}/games/calculator">Binary Calculator</a>
-      <img src="{{site.baseurl}}/images/binary-calculator.png" alt="Image for Page 1">
+      <img src="{{site.baseurl}}/images/binary-calculator.PNG" alt="Image for Page 1">
     </div>
 
     <div class="link-container">
       <a href="{{site.baseurl}}/games/formulagame">Formula1 Quiz</a>
-      <img src="{{site.baseurl}}/images/f1-quiz.png" alt="Image for Page 2">
+      <img src="{{site.baseurl}}/images/f1-quiz.PNG" alt="Image for Page 2">
     </div>
 
     <div class="link-container">
       <a href="{{site.baseurl}}/games/snakegame">Snake Game</a>
-      <img src="{{site.baseurl}}/images/snake-game.png" alt="Image for Page 3">
+      <img src="{{site.baseurl}}/images/snake-game.PNG" alt="Image for Page 3">
     </div>
 
     <div class="link-container">
       <a href="{{site.baseurl}}/games/tictactoe">Tic Tac Toe</a>
-      <img src="{{site.baseurl}}/images/tictactoe.png" alt="Image for Page 4">
+      <img src="{{site.baseurl}}/images/tictactoe.PNG" alt="Image for Page 4">
     </div>
 
     <div class="link-container">
       <a href="{{site.baseurl}}/games/cookie">Cookie Clicker</a>
-      <img src="{{site.baseurl}}/images/cookie-clicker.png" alt="Image for Page 5">
+      <img src="{{site.baseurl}}/images/cookie-clicker.PNG" alt="Image for Page 5">
     </div>
     <div class="link-container">
       <a href="{{site.baseurl}}/games/itunes">Search Music</a>
-      <img src="{{site.baseurl}}/images/itunes.png" alt="Image for Page 5">
+      <img src="{{site.baseurl}}/images/itunes.PNG" alt="Image for Page 5">
     </div>
 </body>
