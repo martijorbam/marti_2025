@@ -291,5 +291,8 @@ Here are some important Notebooks:
 <a href="{{site.baseurl}}/2024/10/14/sprint2_accomplishments_IPYNB_2_.html">Sprint 2 Accomplishments</a>
 
 
+<a href="{{site.baseurl}}/2024/10/25/sprint1_plan_IPYNB_2_.html">Sprint 3 Accomplishments</a>
+
+
 <a href="{{site.baseurl}}/2024/09/09/javascript_IPYNB_2_.html">JS Notebook</a>
 
