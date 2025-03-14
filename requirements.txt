@@ -8,3 +8,5 @@ pandas
 seaborn
 scikit-learn
 progress
+numpy
+flask_restful
