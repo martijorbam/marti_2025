@@ -31,16 +31,13 @@ description: CPT
 // List where all sessions will be stored
   const sessionList = document.getElementById('sessionList');
 
-// Function to load and show saved sessions
   function loadSessions() {
-    const sessions = JSON.parse(localStorage.getItem('sessions')) || []; // Retrieve from storage or use empty list
-    sessionList.innerHTML = ""; // Clear list before adding new sessions
+    const sessions = JSON.parse(localStorage.getItem('sessions')) || [];
+    sessionList.innerHTML = "";
 
-    // If no sessions, show a message
     if (sessions.length === 0) {
       sessionList.innerHTML = "<li>No sessions saved yet!</li>";
     } else {
-    // Loop through sessions and display each one
       sessions.forEach((s, index) => {
         const item = document.createElement('li');
         item.innerHTML = `
@@ -80,6 +77,18 @@ description: CPT
 
 // Save updated sessions list back to localStorage
     localStorage.setItem('sessions', JSON.stringify(sessions));
+
+// Send message based on planned study time
+    let totalMinutes = 0;
+    sessions.forEach(s => {
+      totalMinutes += s.duration;
+    });
+
+    if (totalMinutes > 180) {
+      alert("Great job! You've planned over 3 hours of study. Remember to take breaks!");
+    } else if (totalMinutes > 60) {
+      alert("Nice! You've scheduled over an hour. Keep it up!");
+    }
 
 // Clear the input fields
     document.getElementById('sub').value = "";
